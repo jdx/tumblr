@@ -22,7 +22,8 @@
   <% @posts.each do |post| %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src="<%= post.photo.url %>" />
+        <img src="<%= post.photo.profile.url %>" />
+        <img src="<%= post.photo.thumb.url %>" />
         <div class="caption">
           <h5><%= post.title %></h5>
         </div>
