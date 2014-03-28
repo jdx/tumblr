@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-4">
+    <%= form_for @post do |f| %>
+      <div class="form-group">
+        <label>Title</label>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <label>Image URL</label>
+        <%= f.text_field :image_url, class: 'form-control' %>
+      </div>
+      <%= f.submit "Post", class: 'btn btn-success btn-block btn-lg' %>
+    <% end %>
+  </div>
+</div>
+
+<br/>
+
+<div class='row'>
+  <% @posts.each do |post| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src='<%= post.image_url %>' />
+        <div class="caption">
+          <h5><%= post.title %></h5>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
